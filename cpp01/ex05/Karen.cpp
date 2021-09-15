@@ -32,9 +32,10 @@ void Karen::complain( std::string level )
 	for (i = 0; i < 4; i++)
 	{
 		if (level == str[i])
-			break ;
+			(this->*choose_lev[i])();
+			//break ;
 	}
-	(this->*choose_lev[i])();
+	//(this->*choose_lev[i])();
 }
 
 Karen::Karen(void)
