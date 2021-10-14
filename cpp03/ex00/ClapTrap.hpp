@@ -18,6 +18,14 @@ class ClapTrap
         ClapTrap();
         ~ClapTrap();
         ClapTrap(std::string name);
+        std::string getName(void);
+        void setName(std::string name);
+        int getHP(void);
+        void setHP(int hp);
+        int getEP(void);
+        void setEP(int ep);
+        int getAD(void);
+        void setAD(int ad);
 };
 
 #endif

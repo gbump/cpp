@@ -2,17 +2,17 @@
 
 ClapTrap::ClapTrap() : _name("-no name was given-"), _hp(10), _ep(10), _ad(0)
 {
-    std::cout <<  "Nameless constructor was called" << std::endl;
+    std::cout <<  "Nameless constructor was called CLAP" << std::endl;
 }
 
 ClapTrap::ClapTrap(std::string name) : _name(name), _hp(10), _ep(10), _ad(0)
 {
-    std::cout <<  "Constructor was called" << std::endl;
+    std::cout <<  "Constructor was called CLAP" << std::endl;
 }
 
 ClapTrap::~ClapTrap()
 {
-    std::cout << "Destructor was called" << std::endl;
+    std::cout << "Destructor was called CLAP" << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -41,8 +41,8 @@ void ClapTrap::takeDamage(unsigned int amount)
     else
     {
         _hp += amount;
-        if (_hp > 10)
-            _hp = 10;
+       // if (_hp > _ep)
+         //   _hp = _ep;
         std::cout << _name << " was repaired. hp = " << _hp << std::endl;
     }
  }
@@ -60,3 +60,43 @@ void ClapTrap::takeDamage(unsigned int amount)
          << _ad << " points of damage!\n";
      }
  }
+
+std::string ClapTrap::getName(void)
+{
+    return (_name);
+}
+
+void ClapTrap::setName(std::string name)
+{
+    _name = name;
+}
+
+int ClapTrap::getHP(void)
+{
+    return (_hp);
+}
+
+void ClapTrap::setHP(int hp)
+{
+    _hp = hp;
+}
+
+int ClapTrap::getEP(void)
+{
+    return (_ep);
+}
+
+void ClapTrap::setEP(int ep)
+{
+    _ep = ep;
+}
+
+int ClapTrap::getAD(void)
+{
+    return (_ad);
+}
+
+void ClapTrap::setAD(int ad)
+{
+    _ad = ad;
+}
