@@ -18,6 +18,8 @@ class ClapTrap
         ClapTrap();
         ~ClapTrap();
         ClapTrap(std::string name);
+        ClapTrap (const ClapTrap &other);
+        ClapTrap &operator=(const ClapTrap &other1);
         std::string getName(void);
         void setName(std::string name);
         int getHP(void);

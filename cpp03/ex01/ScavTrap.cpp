@@ -41,3 +41,15 @@ void ScavTrap::guardGate()
          << getAD() << " points of damage!\n";
      }
  }
+
+ ScavTrap::ScavTrap(const ScavTrap &other)
+{
+	std::cout << "Copy constructor called SCAV" << std::endl;
+    *this = other;
+}
+
+ScavTrap &ScavTrap::operator=(const ScavTrap &other1)
+{
+	 std::cout << "Assignation operator called SCAV" << std::endl;
+    return (*this);
+}

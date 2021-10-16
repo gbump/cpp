@@ -33,3 +33,15 @@ DiamondTrap::~DiamondTrap()
 {
         std::cout << "Destructor was called DIAMOND" << std::endl;
 }
+
+DiamondTrap::DiamondTrap(const DiamondTrap &other)
+{
+	std::cout << "Copy constructor called DIAMOND" << std::endl;
+    *this = other;
+}
+
+DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other1)
+{
+	 std::cout << "Assignation operator called DIAMOND" << std::endl;
+     return (*this);
+}

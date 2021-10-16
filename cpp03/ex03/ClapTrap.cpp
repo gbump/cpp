@@ -61,6 +61,24 @@ void ClapTrap::takeDamage(unsigned int amount)
      }
  }
 
+ClapTrap::ClapTrap(const ClapTrap &other)
+{
+	std::cout << "Copy constructor called CLAP" << std::endl;
+    *this = other;
+}
+
+ClapTrap &ClapTrap::operator=(const ClapTrap &other1)
+{
+	std::cout << "Assignation operator called CLAP" << std::endl;
+	if (this == &other1)
+		return (*this);
+    this->_name = other1._name;
+    this->_hp = other1._hp;
+    this->_ep = other1._ep;
+    this->_ad = other1._ad;
+    return (*this);
+}
+
 std::string ClapTrap::getName(void)
 {
     return (_name);

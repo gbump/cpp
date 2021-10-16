@@ -11,6 +11,8 @@ class FragTrap : virtual public ClapTrap
         FragTrap(std::string name);
         ~FragTrap();
         void highFivesGuys(void);
+        FragTrap(const FragTrap &other);
+        FragTrap &operator=(const FragTrap &other1);
     private:
         static unsigned int _hf;
 };

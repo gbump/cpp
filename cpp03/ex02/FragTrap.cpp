@@ -32,3 +32,15 @@ void FragTrap::highFivesGuys(void)
     _hf++;
     std::cout << getName() << " gave a high five, so " << _hf << " was given" << std::endl;
 }
+
+FragTrap::FragTrap(const FragTrap &other)
+{
+	std::cout << "Copy constructor called FRAG" << std::endl;
+    *this = other;
+}
+
+FragTrap &FragTrap::operator=(const FragTrap &other1)
+{
+	 std::cout << "Assignation operator called FRAG" << std::endl;
+     return (*this);
+}

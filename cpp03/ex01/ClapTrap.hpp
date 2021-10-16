@@ -17,6 +17,8 @@ class ClapTrap
         void beRepaired(unsigned int amount);
         ClapTrap();
         ~ClapTrap();
+        ClapTrap (const ClapTrap &other);
+        ClapTrap &operator=(const ClapTrap &other1);
         ClapTrap(std::string name);
         std::string getName(void);
         void setName(std::string name);
