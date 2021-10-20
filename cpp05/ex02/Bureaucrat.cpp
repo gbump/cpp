@@ -71,3 +71,33 @@ void Bureaucrat::downGrade(void)
     else if (_grade > 150)
         throw Bureaucrat::GradeTooLowException();
 }
+
+void Bureaucrat::signForm(Form &other)
+{
+    if (other.getSign() == true)
+    {
+        std::cout << this->_name << " cannot sign " << other.getName() << " .It is already signed" << std::endl;
+        return ;
+    }
+    else if (other.getSign_Grade() < this->_grade)
+    {
+        std::cout << this->_name << " cannot sign " << other.getName() << " .Bureaucrat does not have grade high enough" << std::endl;
+		return ;
+    }
+	else
+		std::cout << this->_name << " signs " << other.getName() << std::endl;
+	other.beSigned(*this);
+}
+
+void Bureaucrat::executeForm(Form const &form)
+{
+    if (!form.getSign())
+		std::cout << this->_name << " cannot execute " << form.getName() << " because the form is not signed" << std::endl;
+    else if (form.getExec_Grade() < this->_grade)
+        std::cout << this->_name << " cannot execute " << form.getName() << " .Bureaucrat does not have grade high enough" << std::endl;
+    else
+    {
+        std::cout << this->_name << " executes " << form.getName() << std::endl;
+        form.execute(*this);
+    }
+}
