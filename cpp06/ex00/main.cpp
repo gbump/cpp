@@ -53,8 +53,10 @@ int main(int argc, char *argv[])
     }
     for (int i = 0; i < str.length(); i++)
     {
-        if (ft_isdigit(str[i]) == 0 && ((str[i] != '.') || (str[i] != 'f' && ft == true && i == str.length() - 1)))
-        {            
+        if ((ft_isdigit(str[i]) == 0) && ((str[i] != '.')/* || (str[i] != 'f' && ft == true && i == str.length() - 1)*/))
+        {         
+            if (ft != 0 && str[i] == 'f' && i == str.length() - 1)
+                break ;
             std::cout << "Float: impossible" << std::endl;
             std::cout << "Double: impossible" << std::endl;
             std::cout << "Int: impossible" << std::endl;
