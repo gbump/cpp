@@ -6,7 +6,7 @@
 
 class ClapTrap
 {
-    private:
+    protected:
         std::string _name;
         int _hp;
         int _ep;
@@ -17,16 +17,16 @@ class ClapTrap
         void beRepaired(unsigned int amount);
         ClapTrap();
         ~ClapTrap();
+        ClapTrap(std::string name);
         ClapTrap (const ClapTrap &other);
         ClapTrap &operator=(const ClapTrap &other1);
-        ClapTrap(std::string name);
-        std::string getName(void);
+        std::string getName(void) const;
         void setName(std::string name);
-        int getHP(void);
+        int getHP(void) const;
         void setHP(int hp);
-        int getEP(void);
+        int getEP(void) const;
         void setEP(int ep);
-        int getAD(void);
+        int getAD(void) const;
         void setAD(int ad);
 };
 

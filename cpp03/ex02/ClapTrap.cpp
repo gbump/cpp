@@ -79,7 +79,7 @@ ClapTrap &ClapTrap::operator=(const ClapTrap &other1)
     return (*this);
 }
 
-std::string ClapTrap::getName(void)
+std::string ClapTrap::getName(void) const
 {
     return (_name);
 }
@@ -89,7 +89,7 @@ void ClapTrap::setName(std::string name)
     _name = name;
 }
 
-int ClapTrap::getHP(void)
+int ClapTrap::getHP(void) const
 {
     return (_hp);
 }
@@ -99,7 +99,7 @@ void ClapTrap::setHP(int hp)
     _hp = hp;
 }
 
-int ClapTrap::getEP(void)
+int ClapTrap::getEP(void) const
 {
     return (_ep);
 }
@@ -109,7 +109,7 @@ void ClapTrap::setEP(int ep)
     _ep = ep;
 }
 
-int ClapTrap::getAD(void)
+int ClapTrap::getAD(void) const
 {
     return (_ad);
 }

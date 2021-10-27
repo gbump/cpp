@@ -42,7 +42,7 @@ void ScavTrap::guardGate()
      }
  }
 
-ScavTrap::ScavTrap(const ScavTrap &other)
+ ScavTrap::ScavTrap(const ScavTrap &other)
 {
 	std::cout << "Copy constructor called SCAV" << std::endl;
     *this = other;
@@ -51,5 +51,11 @@ ScavTrap::ScavTrap(const ScavTrap &other)
 ScavTrap &ScavTrap::operator=(const ScavTrap &other1)
 {
 	 std::cout << "Assignation operator called SCAV" << std::endl;
-     return (*this);
+    if (this == &other1)
+        return (*this);
+    _name = other1.getName();
+    _hp = other1.getHP();
+    _ep = other1.getEP();
+    _ad = other1.getAD();
+    return (*this);
 }

@@ -41,6 +41,12 @@ FragTrap::FragTrap(const FragTrap &other)
 
 FragTrap &FragTrap::operator=(const FragTrap &other1)
 {
-	 std::cout << "Assignation operator called FRAG" << std::endl;
-     return (*this);
+	 std::cout << "Assignation operator called SCAV" << std::endl;
+    if (this == &other1)
+        return (*this);
+    _name = other1.getName();
+    _hp = other1.getHP();
+    _ep = other1.getEP();
+    _ad = other1.getAD();
+    return (*this);
 }

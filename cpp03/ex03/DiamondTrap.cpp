@@ -9,7 +9,7 @@ DiamondTrap::DiamondTrap(void) : _name("-Nameless-")
     setAD(FragTrap::getAD());
  }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), FragTrap(name), ScavTrap(name), _name(name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name), ScavTrap(name), FragTrap(name), _name(name)
 {
     std::cout << "Constructor was called DIAMOND" << std::endl;
    ClapTrap::setName(name + "_clap_name");
@@ -42,6 +42,12 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other)
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other1)
 {
-	 std::cout << "Assignation operator called DIAMOND" << std::endl;
-     return (*this);
+	 std::cout << "Assignation operator called SCAV" << std::endl;
+    if (this == &other1)
+        return (*this);
+    _name = other1.getName();
+    _hp = other1.getHP();
+    _ep = other1.getEP();
+    _ad = other1.getAD();
+    return (*this);
 }
