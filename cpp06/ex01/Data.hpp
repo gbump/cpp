@@ -4,17 +4,13 @@
 # include <iostream>
 #include <stdint.h>
 
-class Data
+typedef struct Data
 {
-    private:
-        std::string _name;
-    public:
-        Data();
-        Data(std::string name);
-        ~Data();
-        Data(const Data &other);
-        Data &operator=(const Data &other);
-        std::string getName() const;
-};
+    std::string str;
+    int numb;
+} Data;
+
+uintptr_t serialize(Data* ptr);
+Data* deserialize(uintptr_t raw);
 
 #endif

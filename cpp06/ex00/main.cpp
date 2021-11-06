@@ -45,17 +45,17 @@ int main(int argc, char *argv[])
     if (str.length() == 1 && ft_isdigit(str[0]) == 0)
     {
         int a = str[0];
-        std::cout << "Float: " << (float)a << ".0f" << std::endl;
-        std::cout << "Double: " << (double)a << ".0" << std::endl;
+        std::cout << "Float: " << static_cast<float>(a) << ".0f" << std::endl;
+        std::cout << "Double: " << static_cast<double>(a) << ".0" << std::endl;
         std::cout << "Int: " << a << std::endl;
         std::cout << "Char: '" << str[0] << "'" << std::endl;
         return (0);
     }
-    for (int i = 0; i < str.length(); i++)
+    for (int i = 0; i < (int)str.length(); i++)
     {
-        if ((ft_isdigit(str[i]) == 0) && ((str[i] != '.')/* || (str[i] != 'f' && ft == true && i == str.length() - 1)*/))
+        if ((ft_isdigit(str[i]) == 0) && ((str[i] != '.')))
         {         
-            if (ft != 0 && str[i] == 'f' && i == str.length() - 1)
+            if (ft != 0 && str[i] == 'f' && i == (int)str.length() - 1)
                 break ;
             std::cout << "Float: impossible" << std::endl;
             std::cout << "Double: impossible" << std::endl;
@@ -68,19 +68,26 @@ int main(int argc, char *argv[])
     }
     double tmp = atof(str.c_str());
     std::cout << "Float: " << static_cast<float>(tmp); 
-    if (ft == 0 || (ft != 0 && str[ft + 1] == '0'))
+    if (ft == 0 || (ft != 0 && str[str.length() - 1] == '0')
+        || (ft != 0 && str[str.length() - 2] == '0' && str[str.length() - 1] == 'f'))
         std::cout << ".0f" << std::endl;
     else
+    {
+        ft = -1;
         std::cout << "f" << std::endl;
+    }
     std::cout << "Double: " << static_cast<double>(tmp);
-    if (ft == 0 || (ft != 0 && str[ft + 1] == '0'))
+    if (ft == 0 || (ft != 0 && str[str.length() - 1] == '0')
+        || (ft != 0 && str[str.length() - 2] == '0' && str[str.length() - 1] == 'f'))
         std::cout << ".0" << std::endl;
     else
         std::cout << std::endl;
     std::cout << "Int: " << static_cast<int>(tmp) << std::endl;
-    if (ft_isprint(static_cast<int>(tmp)) == 0)
-        std::cout << "Char: Non displayable" << std::endl;
-    else
+    if ((ft_isprint(static_cast<int>(tmp)) != 0 && ft != -1)
+        || (ft != 0 && str[str.length() - 1] == '0'
+        && ft_isprint(static_cast<int>(tmp)) != 0))
         std::cout << "Char: '" << static_cast<char>(tmp) << "'" << std::endl;
+    else
+        std::cout << "Char: Non displayable" << std::endl;
     return 0;
 }

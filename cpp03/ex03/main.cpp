@@ -18,7 +18,7 @@ int main()
     a.takeDamage(50);
     a.takeDamage(50);
     a.takeDamage(50);
-    b.takeDamage(2);
+    b.takeDamage(30);
    a.beRepaired(50);
     b.beRepaired(16);
     a.attack("2MONSTER2");

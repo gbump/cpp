@@ -47,6 +47,5 @@ int main()
     for(int i = 0; i < 10; i++)
         std::cout << "CopyDog idea: " << copydog->getBrain().getIdeas(i) << std::endl;
     std::cout << std::endl;
-   // Animal animal;
 	return 0;
 }

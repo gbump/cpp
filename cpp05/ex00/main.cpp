@@ -34,9 +34,19 @@ int main()
         std::cout << bur4 << std::endl;
         bur4.upGrade();
 		std::cout << bur4 << std::endl;
+        // std::cout << std::endl;
+        // Bureaucrat bur5("Milana", 0);
+		// std::cout << bur4 << std::endl;
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	try
+	{
         std::cout << std::endl;
         Bureaucrat bur5("Milana", 0);
-		std::cout << bur4 << std::endl;
+		std::cout << bur5 << std::endl;
 	}
 	catch (std::exception &e)
 	{

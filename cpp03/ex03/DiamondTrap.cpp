@@ -42,7 +42,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &other)
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &other1)
 {
-	 std::cout << "Assignation operator called SCAV" << std::endl;
+	 std::cout << "Assignation operator called DIAMOND" << std::endl;
     if (this == &other1)
         return (*this);
     _name = other1.getName();

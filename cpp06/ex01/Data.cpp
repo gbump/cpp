@@ -1,25 +1,13 @@
 #include "Data.hpp"
 
-Data::Data() : _name("-Nameless-") {}
-
-Data::Data(std::string name) : _name(name) {}
-
-Data::Data(const Data &other)
+uintptr_t serialize(Data* ptr)
 {
-    this->_name = other.getName();
+    std::cout << "serialize" << std::endl;
+    return (reinterpret_cast<uintptr_t>(ptr));
 }
 
-std::string Data::getName() const
+Data* deserialize(uintptr_t raw)
 {
-    return (_name);
+    std::cout << "deserialize" << std::endl;
+    return (reinterpret_cast<Data *>(raw));  
 }
-
-Data &Data::operator=(const Data &other)
-{
-    if (this == &other)
-        return (*this);
-    this->_name = other.getName();
-    return (*this);
-}
-
-Data::~Data() {}
